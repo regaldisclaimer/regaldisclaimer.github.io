@@ -1,0 +1,36 @@
+html, body {
+	height:100vh;
+	font-family: 'Roboto', sans-serif;
+	background-color: #ffffff;
+	font-weight: 300;
+	font-size: 32pt;
+	text-align: center;
+	color: #3B2D38;
+	margin: 0px;
+}
+
+a{
+	display: inline-block;
+	text-decoration: none;
+	color: #000;
+}
+
+img{
+	max-width: 25vw;
+	max-height: 25vh;
+}
+
+#mainIcon{
+	max-width: 50vw;
+	max-height: 50vh;
+}
+
+#title{
+	margin-top: 5vh;
+}
+
+.siteLink {
+	background-color: #f1f1f1;
+}
+
+
