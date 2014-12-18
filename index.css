@@ -3,7 +3,7 @@ Contact: regaldisclaimer@gmail.com for all usage permissions*/
 html, body {
 	height:100vh;
 	font-family: 'Roboto', sans-serif;
-	background-color: #ffffff;
+	background-color: #f1f1f1;
 	font-weight: 300;
 	font-size: 32pt;
 	text-align: center;
@@ -20,6 +20,12 @@ a{
 img{
 	max-width: 25vw;
 	max-height: 25vh;
+	box-shadow: 5px 5px 5px #888888;
+	transition: all 0.5s;
+}
+
+img:hover{
+	box-shadow: 5px 5px 7px #333333;
 }
 
 #mainIcon{
@@ -32,7 +38,7 @@ img{
 }
 
 .siteLink {
-	background-color: #f1f1f1;
+	background-color: #ffffff;
 }
 
 
