@@ -1,4 +1,4 @@
-/*Copyright (c) Regal Disclaimer 2014 All Rights Reserved.
+/*Copyright (c) Regal Disclaimer All Rights Reserved.
 Contact: regaldisclaimer@gmail.com for all usage permissions*/
 html, body {
 	height:100vh;
@@ -11,20 +11,21 @@ html, body {
 	margin: 0px;
 }
 
-p{
+p {
 	text-align:center;
 }
 
-figure{
+figure {
+	display: inline-block;
 	margin: 0;
 	overflow: hidden;
 }
 
-figcaption{
-	padding: 2em;
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 1.25em;
+/*begin required revision*/
+figcaption {
+	padding: 1vw;
+	color: #000;
+	font-size: 24px;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
@@ -67,63 +68,62 @@ figure p {
 	letter-spacing: 1px;
 	font-size: 68.5%;
 }
+/*end required revisions*/
 
-a{
-	display: inline-block;
+a {
 	text-decoration: none;
 	color: #000;
 }
 
 
-
-
-a img{
-	max-width: 25vw;
-	max-height: 25vh;
-	box-shadow: 5px 5px 5px #888888;
-}
-
-a img:hover{
-	box-shadow: 5px 5px 7px #333333;
-
-}
-
-#icons{
+#icons {
 	margin-bottom: 10vh;
 }
 
-#soonIcons{
+#soonIcons {
 	margin-bottom: 10vh;
 }
 
-#mainIcon{
-	max-width: 50vw;
-	max-height: 50vh;
+#mainIcon {
+	max-width: 60vw;
+	max-height: 70vh;
 }
 
-#title{
+#title {
 	margin-top: 5vh;
 	margin-bottom: 15vh;
 	font-size: 48pt;
 }
 
-#soonTitle{
+#soonTitle {
 	margin-top: 5vh;
 }
 
 .siteFig {
 	background-color: #ffffff;
-	opacity: 0.95;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s, box-shadow 0.5s;
+	box-shadow: 5px 5px 5px #888888;
+	-webkit-transition: -webkit-transform 0.55s;
+	transition: transform 0.55s, box-shadow 0.55s;
 	-webkit-transform: scale3d(1,1,1);
 	transform: scale3d(1,1,1);
 }
 
 .siteFig:hover {
-	opacity: 0.6;
-	-webkit-transform: scale3d(0.96,0.96,1);
-	transform: scale3d(0.96,0.96,1);
+	box-shadow: 5px 5px 7px #333333;
+	-webkit-transform: scale3d(0.95,0.95,1);
+	transform: scale3d(0.95,0.95,1);
+}
+
+.siteFig img {
+	max-width: 30vw;
+	max-height: 35vh;
+	opacity: 1;
+	transition: all 0.55s;
+	-webkit-transition: all 0.55s;
+}
+
+.siteFig:hover img {
+	opacity: 0.25;
 }
 
 .siteFig figcaption::before {
@@ -134,7 +134,7 @@ a img:hover{
 	height: 100%;
 	background: rgba(0,0,100,0.2);
 	content: '';
-	-webkit-transition: -webkit-transform 0.6s;
+	-webkit-transition: opacity 0.6s -webkit-transform 0.6s;
 	transition: transform 0.6s;
 	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
 	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
@@ -143,4 +143,16 @@ a img:hover{
 .siteFig:hover figcaption::before {
 	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
 	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+}
+
+.siteFig figcaption h2, .siteFig figcaption p {
+	padding-right: 2vw;
+	text-align: left;
+	opacity: 0;
+	transition: opacity 0.55s;
+	-webkit-transition: opacity 0.55s;
+}
+
+.siteFig:hover figcaption h2, .siteFig:hover figcaption p {
+	opacity: 1;
 }
