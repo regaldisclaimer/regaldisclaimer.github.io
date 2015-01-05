@@ -5,7 +5,7 @@ html, body {
 	font-family: 'Roboto', sans-serif;
 	background-color: #f1f1f1;
 	font-weight: 300;
-	font-size: 32pt;
+	font-size: 24px;
 	text-align: center;
 	color: #3B2D38;
 	margin: 0px;
@@ -25,7 +25,7 @@ figure {
 figcaption {
 	padding: 1vw;
 	color: #000;
-	font-size: 24px;
+	font-size: 32px;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
@@ -66,7 +66,7 @@ figure p {
 
 figure p {
 	letter-spacing: 1px;
-	font-size: 75%;
+	font-size: 80%;
 }
 /*end required revisions*/
 
@@ -92,7 +92,7 @@ a {
 #title {
 	margin-top: 5vh;
 	margin-bottom: 15vh;
-	font-size: 48pt;
+	font-size: 64px;
 }
 
 #soonTitle {
@@ -123,7 +123,7 @@ a {
 }
 
 .siteFig:hover img {
-	opacity: 0.25;
+	opacity: 0.20;
 }
 
 .siteFig figcaption::before {
