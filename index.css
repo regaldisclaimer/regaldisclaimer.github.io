@@ -1,6 +1,6 @@
 /*Copyright (c) Regal Disclaimer All Rights Reserved.
 Contact: regaldisclaimer@gmail.com for all usage permissions*/
-html, body {
+body {
 	height:100vh;
 	font-family: 'Roboto', sans-serif;
 	background-color: #f1f1f1;
@@ -9,6 +9,11 @@ html, body {
 	text-align: center;
 	color: #3B2D38;
 	margin: 0px;
+}
+
+body.altTheme {
+	background-color: #252932;
+	color: #000;
 }
 
 p {
@@ -21,11 +26,23 @@ figure {
 	overflow: hidden;
 }
 
+hr {
+	background-color: black;
+	color: black;
+	height: 1px;
+	border-width: 0;
+}
+
+hr.altTheme {
+	background-color: #FE9408;
+	color: #FE9408;
+}
+
 /*begin required revision*/
 figcaption {
 	padding: 1vw;
 	color: #000;
-	font-size: 32px;
+	font-size: 30px;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
@@ -75,6 +92,23 @@ a {
 	color: #000;
 }
 
+#titleButton {
+	background-color: #fff;
+	border-style: solid;
+	border-width: 4px;
+	border-color: rgba(0,0,0,0.6);
+	font-family: Roboto;
+	font-weight: 300;
+	font-size: 64px;
+	padding: 16px;
+
+}
+
+#titleButton.altTheme {
+	background-color: #252932;
+	border-color: rgba(254,148,8,0.6);
+	color: #fff;
+}
 
 #icons {
 	margin-bottom: 10vh;
@@ -108,10 +142,18 @@ a {
 	transform: scale3d(1,1,1);
 }
 
+.siteFig.altTheme {
+	box-shadow: 5px 5px 5px #121212;
+}
+
 .siteFig:hover {
 	box-shadow: 5px 5px 7px #333333;
 	-webkit-transform: scale3d(0.95,0.95,1);
 	transform: scale3d(0.95,0.95,1);
+}
+
+.siteFig.altTheme:hover {
+	box-shadow: 5px 5px 7px #000;
 }
 
 .siteFig img {
@@ -140,10 +182,39 @@ a {
 	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
 }
 
+.siteFig figcaption.altTheme::before {
+	background: rgba(254,148,8,0.8);
+}
+
+#titleFig figcaption::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+	content: '';
+	-webkit-transition: opacity 0.6s -webkit-transform 0.6s;
+	transition: transform 0.6s;
+	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-150%,0);
+	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-150%,0);
+}
+
+#titleFig figcaption.altTheme::before {
+	background: rgba(254,148,8,0.8);
+}
+
+
 .siteFig:hover figcaption::before {
 	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
 	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
 }
+
+#titleFig:hover figcaption::before {
+	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,150%,0);
+	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,150%,0);
+}
+
 
 .siteFig figcaption h2, .siteFig figcaption p {
 	padding-right: 2vw;

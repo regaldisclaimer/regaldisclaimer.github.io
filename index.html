@@ -1,5 +1,6 @@
-<!-- Copyright (c) Regal Disclaimer 2014 All Rights Reserved.
+<!-- Copyright (c) Regal Disclaimer All Rights Reserved.
 Contact: regaldisclaimer@gmail.com for all usage permissions -->
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -34,10 +35,13 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 	
 	
 	<div id='title'>
-		<p>Regal Disclaimer</p>
+		<figure id='titleFig' class='siteFig'>
+			<button id='titleButton'>Regal Disclaimer</button>
+			<figcaption>
+			</figcaption>
+		</figure>
 	</div>
 	<div id='icons'>
-
 		<a href="#" class='siteLink'>
 			<figure id='mainFig' class='siteFig'>
 				<img src="favicon.png" alt="Regal Disclaimer" id='mainIcon' class='siteIcon'>
@@ -133,5 +137,15 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 
 	</div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
 
+	$(document).on('ready', function(){
+		$('#titleFig').on('click', function(){
+			$('body, #titleButton, figure, figcaption, hr').toggleClass('altTheme');
+			console.log('Day time? Night time!');
+		});
+	});
+
+</script>
 </html>
