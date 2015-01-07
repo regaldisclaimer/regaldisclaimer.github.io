@@ -9,11 +9,13 @@ html, body {
 	text-align: center;
 	color: #3B2D38;
 	margin: 0px;
+	transition: all 0.5s;
 }
 
 html.altTheme, body.altTheme {
 	background-color: #252932;
 	color: #000;
+	transition: all 0.5s;
 }
 
 p {
