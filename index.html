@@ -33,7 +33,8 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 	})(window,document,'script','dataLayer','GTM-ML65H3');</script>
 	<!-- End Google Tag Manager -->
 	
-	
+	<canvas id='skyBox'></canvas>
+
 	<div id='title'>
 		<figure id='titleFig' class='siteFig'>
 			<button id='titleButton'>Regal Disclaimer</button>
@@ -139,13 +140,131 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
-
+	
+	
 	$(document).on('ready', function(){
+		//altTheme
 		$('#titleFig').on('click', function(){
+			var isAlt = false
 			$('html, body, #titleButton, figure, figcaption, hr').toggleClass('altTheme');
+
+			if (isAlt) {
+				tileColor = '200,200,200';
+			} else {
+				tileColor = '21,21,21';
+			}
+
 			console.log('Day time? Night time!');
 		});
+		//end altTheme
+
+
+		//Skybox
+		var canvas = $('#skyBox')[0];
+		var context = canvas.getContext('2d');
+
+		canvas.width = $(document).width();
+		canvas.height = $(document).height();
+
+		//settings
+		var Tiles = [];
+		var tileColor = '21,21,21';
+		var numTiles = 25;
+
+		function StartUp(){
+			BakeTiles();
+			Update();
+		}
+
+		function Tile() {
+			this.active = true;
+			this.size = 35+Math.random()*70;
+			this.x = Math.round(Math.random() * canvas.width);
+			this.y = Math.round(Math.random() * canvas.height);
+
+			if(Math.random()>0.5){
+				this.velocity = {
+					//direction * speed
+					x: (Math.random() < 0.5 ? -1 : 1) * Math.random(),
+					y: 0
+				};    
+			} else {
+				this.velocity = {
+					x: 0,
+					y: (Math.random() < 0.5 ? -1 : 1) * Math.random()
+				};  
+			}
+
+			this.transp = 0.01;
+			this.color = 'rgba('+tileColor+','+this.transp+')';
+		}
+
+		Tile.prototype = {
+			Update: function() {
+				if(this.transp < 0.4) {
+	      			this.transp += 0.002;
+					this.color = 'rgba('+tileColor+','+this.transp+')';
+			    }
+
+				this.x += this.velocity.x;
+				this.y += this.velocity.y;
+
+				if(this.x > canvas.width + 105 || this.x < 0 - 105 || this.y > canvas.height + 105 || this.y < 0 - 105) {
+	    			this.active = false;
+	    		}
+			},
+
+			Draw: function() {
+				context.fillStyle = this.color;
+				context.beginPath();
+				context.rect(this.x, this.y, this.size, this.size);
+				context.fill();
+			}
+		}
+
+		function BakeTiles(){
+			if(Tiles.length < numTiles) {
+				for(var i = Tiles.length; i < numTiles; i++) {
+					Tiles.push(new Tile());
+				}
+			}
+			return false;
+		}
+
+		function Update() {
+			BakeTiles();
+
+			Tiles.forEach(function(Tile) {
+				Tile.Update();
+			});
+
+			Tiles = Tiles.filter(function(Tile) {
+				return Tile.active;
+			});
+
+			Render();
+			requestAnimationFrame(Update);
+		}
+
+		function Render() {
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			Tiles.forEach(function(Tile) {
+				Tile.Draw();
+			});
+		}
+
+		$(window).resize(function() {
+			Tiles = [];
+			canvas.width = $(document).width();
+			canvas.height = $(document).height();
+		});
+
+		StartUp();
+		//end Skybox
+
 	});
+
+	
 
 </script>
 </html>

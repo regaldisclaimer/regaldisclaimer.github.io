@@ -17,6 +17,7 @@ html.altTheme, body.altTheme {
 }
 
 p {
+	margin: 0;
 	text-align:center;
 }
 
@@ -70,13 +71,13 @@ figure figcaption > a {
 figure h2 {
 	word-spacing: -0.15em;
 	font-weight: 300;
+	margin: 0;
 }
 
 figure h2 span {
 	font-weight: 800;
 }
 
-figure h2,
 figure p {
 	margin: 0;
 }
@@ -92,8 +93,15 @@ a {
 	color: #000;
 }
 
+#skyBox {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0;
+}
+
 #titleButton {
-	background-color: #fff;
+	background-color: rgba(255,255,255,0.75);
 	border-style: solid;
 	border-width: 4px;
 	border-color: rgba(0,0,0,0.6);
@@ -124,7 +132,6 @@ a {
 }
 
 #title {
-	margin-top: 5vh;
 	margin-bottom: 15vh;
 	font-size: 64px;
 }
@@ -134,7 +141,7 @@ a {
 }
 
 .siteFig {
-	background-color: #ffffff;
+	background-color: rgba(255,255,255,0.75);
 	box-shadow: 5px 5px 5px #888888;
 	-webkit-transition: -webkit-transform 0.55s;
 	transition: transform 0.55s, box-shadow 0.55s;
@@ -184,6 +191,10 @@ a {
 
 .siteFig figcaption.altTheme::before {
 	background: rgba(254,148,8,0.8);
+}
+
+#titleFig {
+	margin-top: 5vh;
 }
 
 #titleFig figcaption::before {
