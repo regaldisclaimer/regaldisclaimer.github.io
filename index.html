@@ -142,19 +142,21 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 </body>
 <script>
 	
-	
+	var isAlt = false;
+
 	$(document).ready(function(){
 		//altTheme
 		$('#titleFig').on('click', function(){
-			var isAlt = false
+			isAlt = !isAlt;
 			$('html, body, #titleButton, figure, figcaption, hr').toggleClass('altTheme');
-
 			if (isAlt) {
 				tileColor = '200,200,200';
 			} else {
 				tileColor = '21,21,21';
 			}
 
+			Tiles=[];
+			BakeTiles();
 			console.log('Day time? Night time!');
 		});
 		//end altTheme
