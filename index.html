@@ -144,7 +144,7 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 	
 	var isAlt = false;
 
-	$(document).ready(function(){
+	$(window).load(function(){
 		//altTheme
 		$('#titleFig').on('click', function(){
 			isAlt = !isAlt;
@@ -265,10 +265,6 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 		StartUp();
 		//end Skybox
 
-		//cajole the canvas to grab the right size
-		canvas.width = $(document).width();
-		canvas.height = $(document).height();
-		Tiles = [];
 	});
 
 	
