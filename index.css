@@ -124,7 +124,7 @@ a {
 	margin-bottom: 10vh;
 }
 
-#soonIcons {
+.midIcons {
 	margin-bottom: 10vh;
 }
 
@@ -138,8 +138,9 @@ a {
 	font-size: 64px;
 }
 
-#soonTitle {
+.midTitles {
 	margin-top: 5vh;
+	margin-bottom: 5vh;
 }
 
 .siteFig {
