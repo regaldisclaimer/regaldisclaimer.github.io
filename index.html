@@ -36,7 +36,7 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 	<canvas id='skyBox'></canvas>
 
 	<div id='title'>
-		<figure id='titleFig' class='siteFig'>
+		<figure class='titleFig' class='siteFig'>
 			<button id='titleButton'>Regal Disclaimer</button>
 			<figcaption>
 			</figcaption>
@@ -178,6 +178,11 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 			</figure>
 		</a>
 	</div>
+
+	<hr />
+	<div class='midTitles'>
+		<a target="_blank" href="http://www.regaldisclaimer.com/Services" class='serviceLink'><p>Need a website/Mobile App/Game developed?</p><p>Looking to improve your current product?</p><p>Click here!</p></a>
+	</div>
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54ad6bc83a3bc1fd" async="async"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </body>
@@ -187,7 +192,7 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 
 	$(window).load(function(){
 		//altTheme
-		$('#titleFig').on('click', function(){
+		$('.titleFig').on('click', function(){
 			isAlt = !isAlt;
 			$('html, body, #titleButton, figure, figcaption, hr').toggleClass('altTheme');
 			if (isAlt) {

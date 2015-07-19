@@ -1,0 +1,227 @@
+<!-- Copyright (c) Regal Disclaimer All Rights Reserved.
+Contact: regaldisclaimer@gmail.com for all usage permissions -->
+
+<html>
+
+<head>
+	<title>Development Services: Regal Disclaimer</title>
+
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+	<link rel='stylesheet' type='text/css' href='index.css'> 
+
+	<link rel="apple-touch-icon" href="favicon.png">
+	<link rel="apple-touch-icon-precomposed" href="favicon.png">
+	<link rel="icon" type="image/png" href="favicon.png">
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="shortcut icon" sizes="128x128" href="128.png">
+	<link rel="shortcut icon" sizes="196x196" href="196.png">
+	<link rel="shortcut icon" sizes="256x256" href="256.png">
+	<style>
+
+		html,body {
+			text-align: center;
+		}
+
+		h2 {
+			padding-top: 5vh;
+			margin-top: 5vh;
+		}
+
+		h3 {
+			text-align: left;
+		}
+
+		h4 {
+			text-align: left;
+			font-weight: 300;
+			margin: auto;
+			max-width: 50em;
+			margin-bottom: 5vh;
+		}
+
+		.section {
+			background-color: rgba(255,0,0,0.6);
+			padding-left: 3vw;
+			padding-right: 3vw;
+			padding-top: 3vh;
+			padding-bottom: 3vh;
+		}
+
+		.margin10 {
+			margin-left: 10vw;
+			margin-right: 10vw;
+			background-color: rgba(0,255,255,0.6);
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-ML65H3"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-ML65H3');</script>
+	<!-- End Google Tag Manager -->
+	
+	<canvas id='skyBox'></canvas>
+	<div class='margin10'>
+		<h2>Software Devlopment Services</h2>
+		<h4>RegalDisclaimer offers cost and time effective solutions to develop new websites, mobile applications, and cross-platform games, or improve your current product.</h4>
+		<h4>Check below for our usual structure of services. We are flexible, and are always ready to find a solution that works for you. For all inquiries, <a target="_blank" href="mailto:regaldisclaimer@gmail.com">just drop us an email at: regaldisclaimer@gmail.com</a></h4>
+		<div class='section'>
+			<h3>Consulting Services</h3>
+			<h4>RegalDisclaimer offer state of the art technology and tools and experience to bring effective solutions to improve your application's speed, security, and functionalities. Shoot us an email for a free estimation and consultation.</h4>
+			<h4>Service starts at 50 USD per hour. Overtime charge applies to off-hours and unscheduled services. Email us for details!</h4>
+		</div>
+		<div class='section'>
+			<h3>New Mobile App</h3>		
+			<h4>With our modern technology, we can develop your app idea into an Android App and an iOS app at the same time. This makes the development time and cost effective.</h4>
+			<h4>Prototype development and publishing to Google Play Store and Apple iOS App Store start at 5,000 USD, and takes roughly a month. Cost and time for development varies greatly on the scope of the project. Drop us an email!</h4>
+		</div>
+		<div class='section'>
+			<h3>New Cross-Platform Game</h3>
+			<h4>Turn your idea into a distributable game. Using a modern engine, we can develop your game for multiple platforms at once, including Web, PC, Mac, Linux, Android, iOS, and even consoles</h4>
+			<h4>Game development budget varies significantly depending on the project. Drop us an email for a free estimation!</h4>
+	</div>
+
+
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54ad6bc83a3bc1fd" async="async"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</body>
+<script>
+	
+	var isAlt = false;
+
+	$(window).load(function(){
+		//altTheme
+		$('#titleFig').on('click', function(){
+			isAlt = !isAlt;
+			$('html, body, #titleButton, figure, figcaption, hr').toggleClass('altTheme');
+			if (isAlt) {
+				tileColor = '200,200,0';
+			} else {
+				tileColor = '12,12,0';
+			}
+
+			Tiles=[];
+			BakeTiles();
+			console.log('Day time? Night time!');
+		});
+		//end altTheme
+
+
+		//Skybox
+		var canvas = $('#skyBox')[0];
+		var context = canvas.getContext('2d');
+
+		canvas.width = $(document).width();
+		canvas.height = $(document).height();
+
+		//settings
+		var Tiles = [];
+		var tileColor = '12,12,0';
+		var numTiles = 25;
+
+		function StartUp(){
+			BakeTiles();
+			Update();
+		}
+
+		function Tile() {
+			this.active = true;
+			this.size = 35+Math.random()*70;
+			this.x = Math.round(Math.random() * canvas.width);
+			this.y = Math.round(Math.random() * canvas.height);
+
+			if(Math.random()>0.5){
+				this.velocity = {
+					//direction * speed
+					x: (Math.random() < 0.5 ? -1 : 1) * Math.random(),
+					y: 0
+				};    
+			} else {
+				this.velocity = {
+					x: 0,
+					y: (Math.random() < 0.5 ? -1 : 1) * Math.random()
+				};  
+			}
+
+			this.transp = 0.01;
+			this.color = 'rgba('+tileColor+','+this.transp+')';
+		}
+
+		Tile.prototype = {
+			Update: function() {
+				if(this.transp < 0.2) {
+	      			this.transp += 0.002;
+					this.color = 'rgba('+tileColor+','+this.transp+')';
+			    }
+
+				this.x += this.velocity.x;
+				this.y += this.velocity.y;
+
+				if(this.x > canvas.width + 105 || this.x < 0 - 105 || this.y > canvas.height + 105 || this.y < 0 - 105) {
+	    			this.active = false;
+	    		}
+			},
+
+			Draw: function() {
+				context.fillStyle = this.color;
+				context.beginPath();
+				context.rect(this.x, this.y, this.size, this.size);
+				context.fill();
+			}
+		}
+
+		function BakeTiles(){
+			if(Tiles.length < numTiles) {
+				for(var i = Tiles.length; i < numTiles; i++) {
+					Tiles.push(new Tile());
+				}
+			}
+			return false;
+		}
+
+		function Update() {
+			BakeTiles();
+
+			Tiles.forEach(function(Tile) {
+				Tile.Update();
+			});
+
+			Tiles = Tiles.filter(function(Tile) {
+				return Tile.active;
+			});
+
+			Render();
+			requestAnimationFrame(Update);
+		}
+
+		function Render() {
+			context.clearRect(0, 0, canvas.width, canvas.height);
+			Tiles.forEach(function(Tile) {
+				Tile.Draw();
+			});
+		}
+
+		$(window).resize(function() {
+			Tiles = [];
+			canvas.width = $(document).width();
+			canvas.height = $(document).height();
+		});
+
+		StartUp();
+		//end Skybox
+
+	});
+
+	
+
+</script>
+</html>

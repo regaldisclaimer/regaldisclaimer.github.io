@@ -95,6 +95,11 @@ a {
 	color: #000;
 }
 
+.serviceLink {
+	color: rgba(255,0,0,0.9);
+	pointer: crosshair;
+}
+
 #skyBox {
 	position: absolute;
 	left: 0;
@@ -141,6 +146,10 @@ a {
 .midTitles {
 	margin-top: 5vh;
 	margin-bottom: 5vh;
+}
+
+.botTitle {
+	margin-top: 5vh;
 }
 
 .siteFig {
@@ -196,7 +205,7 @@ a {
 	background: rgba(254,148,8,0.8);
 }
 
-#titleFig {
+.titleFig {
 	margin-top: 5vh;
 	cursor: pointer;
 }
