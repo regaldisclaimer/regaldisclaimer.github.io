@@ -97,11 +97,8 @@ a {
 
 .iBlock {
 	display: inline-block;
-}
-
-.serviceLink {
 	color: rgba(255,0,0,0.9);
-	pointer: crosshair;
+	cursor: crosshair;
 }
 
 #skyBox {
