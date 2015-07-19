@@ -36,8 +36,8 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 	<canvas id='skyBox'></canvas>
 
 	<div id='title'>
-		<figure id='titleFig' class='siteFig'>
-			<button id='titleButton'>Regal Disclaimer</button>
+		<figure class='siteFig titleFig'>
+			<button class='titleButton'>Regal Disclaimer</button>
 			<figcaption>
 			</figcaption>
 		</figure>
@@ -184,7 +184,7 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 
 	</div>
 	<div>
-		<figure id='titleFig' class='siteFig blockFig' onclick="window.open('http://www.regaldisclaimer.com/Services','_blank');">
+		<figure class='titleFig siteFig blockFig' onclick="window.open('http://www.regaldisclaimer.com/Services','_blank');">
 			<button>	
 				<p class='iBlock'>Need a website/Mobile App/Game developed?</p><br />
 				<p class='iBlock'>Looking to improve your current product?</p><br />
@@ -203,9 +203,9 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 
 	$(window).load(function(){
 		//altTheme
-		$('#titleFig').on('click', function(){
+		$('.titleFig').on('click', function(){
 			isAlt = !isAlt;
-			$('html, body, #titleButton, figure, figcaption, hr').toggleClass('altTheme');
+			$('html, body, .titleButton, figure, figcaption, hr').toggleClass('altTheme');
 			if (isAlt) {
 				tileColor = '200,200,200';
 			} else {
