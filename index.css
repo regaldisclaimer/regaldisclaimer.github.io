@@ -209,7 +209,7 @@ a {
 	background: rgba(254,148,8,0.8);
 }
 
-.titleFig {
+#titleFig {
 	margin-top: 5vh;
 	cursor: pointer;
 }
