@@ -96,7 +96,6 @@ a {
 }
 
 .iBlock {
-	display: inline-block;
 	color: rgba(255,0,0,0.9);
 	cursor: crosshair;
 }
