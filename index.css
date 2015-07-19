@@ -96,9 +96,20 @@ a {
 }
 
 .iBlock {
+	font-size: 24px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
 	color: rgba(255,0,0,0.9);
 	cursor: pointer;
 	z-index: 1000;
+
+}
+
+.blockFig {
+	margin-bottom: 10vh;
+	border-style: solid;
+	border-width: 4px;
+	border-color: rgba(255,0,0,0.6);
 }
 
 #skyBox {
@@ -144,6 +155,12 @@ a {
 	font-size: 64px;
 }
 
+.iTitle {
+	margin-top: 5vh;
+	margin-bottom: 5vh;
+	cursor: crosshair;
+}
+
 .midTitles {
 	margin-top: 5vh;
 	margin-bottom: 5vh;
@@ -160,6 +177,7 @@ a {
 	transition: transform 0.55s, box-shadow 0.55s;
 	-webkit-transform: scale3d(1,1,1);
 	transform: scale3d(1,1,1);
+	cursor: pointer;
 }
 
 .siteFig.altTheme {
