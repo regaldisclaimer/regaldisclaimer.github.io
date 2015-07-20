@@ -190,7 +190,17 @@ a {
 	transform: scale3d(0.95,0.95,1);
 }
 
+.siteFig.active {
+	box-shadow: 5px 5px 7px #333333;
+	-webkit-transform: scale3d(0.95,0.95,1);
+	transform: scale3d(0.95,0.95,1);
+}
+
 .siteFig.altTheme:hover {
+	box-shadow: 5px 5px 7px #000;
+}
+
+.siteFig.altTheme.active {
 	box-shadow: 5px 5px 7px #000;
 }
 
@@ -203,6 +213,10 @@ a {
 }
 
 .siteFig:hover img {
+	opacity: 0.20;
+}
+
+.siteFig.active img {
 	opacity: 0.20;
 }
 
@@ -253,11 +267,20 @@ a {
 	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
 }
 
+.siteFig.active figcaption::before {
+	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+}
+
 .titleFig:hover figcaption::before {
 	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,150%,0);
 	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,150%,0);
 }
 
+.titleFig.active figcaption::before {
+	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,150%,0);
+	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,150%,0);
+}
 
 .siteFig figcaption h2, .siteFig figcaption p {
 	padding-right: 2vw;
@@ -268,5 +291,9 @@ a {
 }
 
 .siteFig:hover figcaption h2, .siteFig:hover figcaption p {
+	opacity: 1;
+}
+
+.siteFig.active figcaption h2, .siteFig.active figcaption p {
 	opacity: 1;
 }

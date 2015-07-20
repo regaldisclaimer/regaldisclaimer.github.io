@@ -218,6 +218,20 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 		});
 		//end altTheme
 
+		//active rotation
+		var titles = $('.siteFig');
+
+		var titleIndex = 0;
+
+		setInterval(function(){
+			titles.eq(titleIndex%titles.length).addClass('active');
+			titles.eq((titleIndex-1)%titles.length).removeClass('active');
+			titleIndex++;
+		},2500);
+
+
+
+
 
 		//Skybox
 		var canvas = $('#skyBox')[0];
