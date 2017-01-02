@@ -14,7 +14,7 @@ html, body {
 
 html.altTheme, body.altTheme {
 	background-color: #252932;
-	color: #000;
+	color: #FFF;
 	transition: all 1s;
 }
 
@@ -51,7 +51,7 @@ hr.altTheme {
 figcaption {
 	padding: 1vw;
 	color: #000;
-	font-size: 30px;
+	font-size: 24px;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
