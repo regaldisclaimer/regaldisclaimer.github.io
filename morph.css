@@ -1,0 +1,60 @@
+.noscroll {
+  overflow:hidden;
+}
+
+.morphDoc {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  overflow-y: auto;
+  background-color: rgba(50, 250, 250, 0.95);
+  visibility: hidden;
+  -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.morphDoc.open {
+  opacity: 1;
+  background-color: rgba(50, 250, 250, 0.95);
+  visibility: visible;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+span.morphDoc-closeT {
+  position: static;
+  display: block;
+  text-align: right;
+  margin-top: 5vh;
+  margin-right: 10vw;
+}
+
+span.morphDoc-closeB {
+  display: block;
+  margin-top: 10vh;
+  margin-right: 10vw;
+  margin-bottom: 10vh;
+  position: static;
+  text-align: right;
+}
+
+div.morphDoc-content {
+  margin-top: 10vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  text-align: left;
+}
+
+.morphDoc-content p{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.morphDoc-content ul li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
