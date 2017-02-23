@@ -30,6 +30,7 @@ span.morphDoc-closeT {
   text-align: right;
   margin-top: 5vh;
   margin-right: 10vw;
+  cursor: pointer;
 }
 
 span.morphDoc-closeB {
@@ -39,6 +40,7 @@ span.morphDoc-closeB {
   margin-bottom: 10vh;
   position: static;
   text-align: right;
+  cursor: pointer;
 }
 
 div.morphDoc-content {
