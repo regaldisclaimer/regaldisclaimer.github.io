@@ -206,10 +206,11 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 	<div class='midTitles' id='archives'>
 		<p class="section">Archives</p>
 		<p>
-			Database of experiments conducted for technical training
+			Database of internal projects conducted for technical training
 		</p>
+        <p>--</p>
 		<p>
-			(These entries are not professional projects/products, and intentionally lack asthetic polish)
+			These entries are not professional projects/products, and often lack asthetic polish
 		</p>
 	</div>
 	<div class='midIcons'>
@@ -256,15 +257,6 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 				</figcaption>
 			</figure>
 		</a>
-		<a target='_blank' onclick="openMorph('EBOOK')" class='siteLink'>
-			<figure class='siteFig'>
-				<img src='icons/TheEBook.png' alt='TheEBook' class='siteIcon'>
-				<figcaption>
-					<h2>The <span>E book</span></h2>
-					<p>Excercise on pricing and distribution</p>
-				</figcaption>
-			</figure>
-		</a>
 		<a target='_blank' onclick="openMorph('DEANSLIST')" class='siteLink'>
 			<figure class='siteFig'>
 				<img src='icons/DeansList.png' alt="Dean's List" class='siteIcon'>
@@ -289,6 +281,15 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 				<figcaption>
 					<h2><span>Doge Dodge</span></h2>
 					<p>Exercise on project management and app distribution</p>
+				</figcaption>
+			</figure>
+		</a>
+		<a target='_blank' onclick="openMorph('EBOOK')" class='siteLink'>
+			<figure class='siteFig'>
+				<img src='icons/TheEBook.png' alt='TheEBook' class='siteIcon'>
+				<figcaption>
+					<h2>The <span>E book</span></h2>
+					<p>Excercise on pricing and distribution</p>
 				</figcaption>
 			</figure>
 		</a>
@@ -368,7 +369,7 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 				</ul>
                 <h5>Results</h5>
                 <p>The government officials from the research grant organization was excited about the product demonstration, and gave high praises. The phenomenal success of the research project evaluation lead to discussiosn for further projects.</p>
-                
+
                 <p>A full utility patent for the product is currently being pursued by the client's legal team.</p>
 				<hr />
 				<h3>VR Safari</h3>
@@ -494,13 +495,14 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 			<div class="morphDoc-content">
 				<h2><span>CrowdFall</span></h2>
 				<p>2015 PolyHack finalist.</p>
-				<p>Rapidly prototyped browser based MMO game</p>
-				<p>Excercise on data concurrency</p>
-				<p>Collab. wih</p>
+                <a target='_blank' href='https://github.com/regaldisclaimer/crowdfall' class='archiveLink'>[View Source Code]</a>
+                <h5>Product</h5>
+                <p>This product was developed for a hackathon at Tufts University.</p>
+				<p>It was a rapidly prototyped browser based MMO game inspired by "Twitch Plays Pokemon," and showcased data concurrency, consistency, and real-time transmission.</p>
+                <p>Multiple participants controlled the same character, and were allowed to spam inputs for controlling the character. All the participants were able to see the characters being controlled chaotically in real-time.</p>
+				<h5>Created With</h5>
 				<p>@AFriendlyRobot</p>
 				<p>@aareano</p>
-				<p>Inspired by "Twitch Plays Pokemon"</p>
-				<a target='_blank' href='http://www.regaldisclaimer.com/crowdfall/' class='archiveLink'>[Go to the Application]</a>
 			</div>
 			<span onclick="closeMorph('CROWDFALL')" class='morphDoc-closeB'>Close</span>
 		</div>
@@ -508,14 +510,16 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 			<span onclick="closeMorph('EMAILCLOCK')" class='morphDoc-closeT'>Close</span>
 			<div class="morphDoc-content">
 				<h2><span>EmailClock</span></h2>
-				<p>'Hello, this is clock!'</p>
-				<p>
-					Excercise on building a SAAS with:
-						<p>- Secure Payment System</p>
-						<p>- Realtime Database</p>
-						<p>- Email Server</p>
-				</p>
-				<a target='_blank' href='http://www.regaldisclaimer.com/EmailClock/' class='archiveLink'>[Go to the Application]</a>
+				<p>Paid SMS and Email Notification Service</p>
+                <a target='_blank' href='https://github.com/regaldisclaimer/EmailClock' class='archiveLink'>[View Source Code]</a>
+                <h5>Product</h5>
+                <p>Inspired from a running joke among colleagues, this notification service was developed featuring:</p>
+                <ul>
+                    <li>PCI-compliant secure credit card payment system</li>
+                    <li>Realtime database with ACID transactions</li>
+                    <li>Low latency server for frequently sending emails and SMS</li>
+                </ul>
+                <p>This helpful service sends an email or SMS every minute to tell the user what time it currently is: "Hello, this is clock! It is currently 5:54PM EST!" "Hello, this is clock! It is currently 5:55PM EST!"</p>
 			</div>
 			<span onclick="closeMorph('EMAILCLOCK')" class='morphDoc-closeB'>Close</span>
 		</div>
@@ -523,9 +527,13 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 			<span onclick="closeMorph('CHECKSOME')" class='morphDoc-closeT'>Close</span>
 			<div class="morphDoc-content">
 				<h2><span>CheckSome</span></h2>
-				<p>Fraud-proof giveaway system using hash functions</p>
-				<p>Excercise on security and database integrity</p>
-				<a target='_blank' href='http://www.regaldisclaimer.com/CheckSome' class='archiveLink'>[Go to the Application]</a>
+				<p>Fraud-proof lottery/giveaway system using SHA3-512</p>
+				<a target='_blank' href='https://github.com/regaldisclaimer/CheckSome' class='archiveLink'>[See Source Code]</a>
+                <h5>Product</h5>
+                <p>Ther are many records of internal staff members cheating on lotteries by manipulating the winner selection process.</p>
+                <p>It is thus valuable for lottery systems to be able to demonstrate the winner selection was truly random, and that the lottery organizers did not have an ability to manipulate the selecting process.</p>
+                <p>This unfinished concept product explored the usage of a hash function to achieve a fraud-proof lottery system.</p>
+                <p>This method is currently being used successfully in large scale drawings. <a target="_blank" href="https://www.reddit.com/r/millionairemakers/comments/2ournt/explanation_of_our_new_drawing_system_inspired_by/"><i>For example, a popular monthly drawing on reddit uses this methodology with SHA-256.</i></a></p>
 			</div>
 			<span onclick="closeMorph('CHECKSOME')" class='morphDoc-closeB'>Close</span>
 		</div>
@@ -534,36 +542,30 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 				<div class="morphDoc-content">
 					<h2><span>Jimdo: </span>Free Website</h2>
 					<p>Launch your own website for free in less than 5 mintues</p>
-					<p>
-						Exercise on partnerships and customer acquisition
+					<a target='_blank' href='http://rdsds.jimdo.com' class='archiveLink'>[Create your website]</a>
+                    <h5>Project</h5>
+                    <p>We are approached by many clients with varying goals, and sometimes, their needs are too basic to warrant a high-cost custom development. This is often the case for simple static websites used for informative purposes.</p>
+                    <p>Our job is to always find the right solution for our clients, so we recommend third party alternatives rather than simply sending them away. Jimdo is one of many services we sometimes recommend (we have several similar services we recommend depending on the client's needs) to clients for simple websites, </p>
+                    <p>We have a partnership with the service, and have a custom landing page for their service's customer acquisition.
 					</p>
-					<a target='_blank' href='http://rdsds.jimdo.com' class='archiveLink'>[Go to the Application]</a>
 				</div>
 			<span onclick="closeMorph('JIMDO')" class='morphDoc-closeB'>Close</span>
-		</div>
-		<div id='EBOOK-doc' class='morphDoc'>
-			<span onclick="closeMorph('EBOOK')" class='morphDoc-closeT'>Close</span>
-			<div class="morphDoc-content">
-				<h2>The <span>E book</span></h2>
-				<p>It's an E book</p>
-				<p>
-					Excercise on pricing and distribution
-				</p>
-				<a target='_blank' href='https://gum.co/theEBook' class='archiveLink'>[Go to the Application]</a>
-			</div>
-			<span onclick="closeMorph('EBOOK')" class='morphDoc-closeB'>Close</span>
 		</div>
 		<div id='DEANSLIST-doc' class='morphDoc'>
 			<span onclick="closeMorph('DEANSLIST')" class='morphDoc-closeT'>Close</span>
 			<div class="morphDoc-content">
 				<h2>Dean's <span>List</span></h2>
-				<p>Hack360 2015</p>
-				<p>Excercise on project management and database structure</p>
-				<p>Collab. with</p>
+				<p>Hack360 2015 Core Product</p>
+                <a target='_blank' href='https://github.com/regaldisclaimer/RainyTuesday' class='archiveLink'>[View Soure Code]</a>
+                <h5>Product</h5>
+                <p>Dean's List was the product designed and developed for a private in-house hackathon, Hack360.</p>
+                <p>The product was a directory webapp with OAuth2.0 security and a NoSQL database.</p>
+                <p>The development provided training in full stack web development, as well as serve as an excercise on project management.</p>
+				<h5>Created With</h5>
 				<p>@AFriendlyRobot</p>
 				<p>@dyz3</p>
 				<p>@jbawsh</p>
-				<a target='_blank' href='http://www.regaldisclaimer.com/RainyTuesday' class='archiveLink'>[Go to the Application]</a>
+
 			</div>
 			<span onclick="closeMorph('DEANSLIST')" class='morphDoc-closeB'>Close</span>
 		</div>
@@ -571,11 +573,13 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 			<span onclick="closeMorph('HACK360')" class='morphDoc-closeT'>Close</span>
 			<div class="morphDoc-content">
 				<h2>Hack <span>360</span></h2>
-				<p>Friendly Hackathon</p>
-				<p>Excercise on project management</p>
-				<p>Collab. with</p>
+                <p>Self organized private hackathon</p>
+				<a target='_blank' href='http://www.regaldisclaimer.com/Hack360' class='archiveLink'>[Go to the event page]</a>
+                <h5>Project</h5>
+                <p>An in-house hackathon organized for fun and training.</p>
+                <p>A webapp product was designed to serve the local community, and the development served as a useful training opportunity for all participants.</p>
+				<h5>Hosted With</h5>
 				<p>@AFriendlyRobot</p>
-				<a target='_blank' href='http://www.regaldisclaimer.com/Hack360' class='archiveLink'>[Go to the Application]</a>
 			</div>
 			<span onclick="closeMorph('HACK360')" class='morphDoc-closeB'>Close</span>
 		</div>
@@ -584,21 +588,44 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 			<div class="morphDoc-content">
 				<h2><span>Doge Dodge</span></h2>
 				<p>Award-winning Free Android Game</p>
-				<p>Collab. with @jbawsh</p>
-				<p>Exercise on project management and app distribution</p>
-				<a target='_blank' href='https://play.google.com/store/apps/developer?id=Regaldisclaimer&hl=en' class='archiveLink'>[Go to the Application]</a>
+				<a target='_blank' href='https://github.com/regaldisclaimer/DogeDodge' class='archiveLink'>[View Source Code]</a>
+                <h5>Product</h5>
+                <p>This product was intended to be a training for creating a mobile game with monetization and social integration.</p>
+                <p>The game features:</p>
+                <ul>
+                    <li>Interstitial Advertisements</li>
+                    <li>Google Play Achievements and Highscore</li>
+                    <li>User statistics</li>
+                </ul>
+                <p>The game also won the top popular choice award in a small game development contest.</p>
+                <h5>Built With</h5>
+				<p>@jbawsh</p>
 			</div>
 			<span onclick="closeMorph('DOGEDODGE')" class='morphDoc-closeB'>Close</span>
+		</div>
+		<div id='EBOOK-doc' class='morphDoc'>
+			<span onclick="closeMorph('EBOOK')" class='morphDoc-closeT'>Close</span>
+			<div class="morphDoc-content">
+				<h2>The <span>E book</span></h2>
+                <p>Digital Product Distribution</p>
+				<a target='_blank' href='https://gum.co/theEBook' class='archiveLink'>[Get the book]</a>
+                <h5>Product</h5>
+				<p>A gag book was written from a joke among colleagues.</p>
+                <p>We took it as an opportunity to explore methods of selling digital goods. It was distributed on multiple sales channels at various price points.</p>
+                <p>It is currently available without charge.</p>
+			</div>
+			<span onclick="closeMorph('EBOOK')" class='morphDoc-closeB'>Close</span>
 		</div>
 		<div id='WHEREARTTHOU-doc' class='morphDoc'>
 			<span onclick="closeMorph('WHEREARTTHOU')" class='morphDoc-closeT'>Close</span>
 			<div class="morphDoc-content">
 				<h2>Where <span>Art Thou?</span></h2>
 				<p>A client-side webapp</p>
-				<p>
-					Excercise on web security and concurrency
-				</p>
-				<a target='_blank' href='http://www.regaldisclaimer.com/WhereArtThou' class='archiveLink'>[Go to the Application]</a>
+				<a target='_blank' href='https://github.com/regaldisclaimer/WhereArtThou' class='archiveLink'>[View Source Code]</a>
+                <h5>Product</h5>
+                <p>This product is a simple client-side messaging webapp.</p>
+                <p>This app utilizes Firebase's security rules in order to create a secure database without a backend server.</p>
+                <p>Firebase's use of websockets allows the chatroom to receive real-time message updates.</p>
 			</div>
 			<span onclick="closeMorph('WHEREARTTHOU')" class='morphDoc-closeB'>Close</span>
 		</div>
