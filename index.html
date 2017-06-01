@@ -275,7 +275,7 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 				</figcaption>
 			</figure>
 		</a>
-		<a target='_blank' onclick="openMorph('DOGEDODGE')" class='siteLink'>
+		<!-- <a target='_blank' onclick="openMorph('DOGEDODGE')" class='siteLink'>
 			<figure class='siteFig'>
 				<img src='icons/DogeDodge.png' alt='DogeDodge' class='siteIcon'>
 				<figcaption>
@@ -283,7 +283,7 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 					<p>Exercise on project management and app distribution</p>
 				</figcaption>
 			</figure>
-		</a>
+		</a> -->
 		<a target='_blank' onclick="openMorph('EBOOK')" class='siteLink'>
 			<figure class='siteFig'>
 				<img src='icons/TheEBook.png' alt='TheEBook' class='siteIcon'>
@@ -635,154 +635,155 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 </body>
 <script>
+var isAlt = false;
 
-	var isAlt = false;
+//Function for scrolling into a certain element
+//smooth only supported on firefox at the moment
+var slideOnto = function(elementSelector) {
+	document.querySelector(elementSelector).scrollIntoView({
+		block: "start",
+		behavior: "smooth"
+	});
+};
 
-	//Function for scrolling into a certain element
-	//smooth only supported on firefox at the moment
-	var slideOnto = function(elementSelector) {
-			document.querySelector(elementSelector).scrollIntoView({
-				block: 'start',
-				behavior: 'smooth'
-			});
+$(window).load(function() {
+	//altTheme
+	$(".titleFig").on("click", function() {
+		isAlt = !isAlt;
+		$("html, body, .titleButton, figure, figcaption, hr").toggleClass(
+			"altTheme"
+		);
+		if (isAlt) {
+			tileColor = "200,200,200";
+		} else {
+			tileColor = "21,21,21";
+		}
+
+		Tiles = [];
+		BakeTiles();
+		console.log("Day time? Night time!");
+	});
+	//end altTheme
+
+	//active rotation
+	var titles = $(".siteFig");
+
+	var titleIndex = 0;
+
+	setInterval(function() {
+		titles.eq(titleIndex % titles.length).addClass("active");
+		titles.eq((titleIndex - 1) % titles.length).removeClass("active");
+		titleIndex++;
+	}, 2500);
+
+	//Skybox
+	var canvas = $("#skyBox")[0];
+	var context = canvas.getContext("2d");
+
+	canvas.width = $(document).width();
+	canvas.height = $(document).height();
+
+	//settings
+	var Tiles = [];
+	var tileColor = "21,21,21";
+	var numTiles = 25;
+
+	function StartUp() {
+		BakeTiles();
+		Update();
 	}
 
-	$(window).load(function(){
-		//altTheme
-		$('.titleFig').on('click', function(){
-			isAlt = !isAlt;
-			$('html, body, .titleButton, figure, figcaption, hr').toggleClass('altTheme');
-			if (isAlt) {
-				tileColor = '200,200,200';
-			} else {
-				tileColor = '21,21,21';
+	function Tile() {
+		this.active = true;
+		this.size = 35 + Math.random() * 70;
+		this.x = Math.round(Math.random() * canvas.width);
+		this.y = Math.round(Math.random() * canvas.height);
+
+		if (Math.random() > 0.5) {
+			this.velocity = {
+				//direction * speed
+				x: (Math.random() < 0.5 ? -1 : 1) * Math.random(),
+				y: 0
+			};
+		} else {
+			this.velocity = {
+				x: 0,
+				y: (Math.random() < 0.5 ? -1 : 1) * Math.random()
+			};
+		}
+
+		this.transp = 0.01;
+		this.color = "rgba(" + tileColor + "," + this.transp + ")";
+	}
+
+	Tile.prototype = {
+		Update: function() {
+			if (this.transp < 0.4) {
+				this.transp += 0.002;
+				this.color = "rgba(" + tileColor + "," + this.transp + ")";
 			}
 
-			Tiles=[];
-			BakeTiles();
-			console.log('Day time? Night time!');
+			this.x += this.velocity.x;
+			this.y += this.velocity.y;
+
+			if (
+				this.x > canvas.width + 105 ||
+				this.x < 0 - 105 ||
+				this.y > canvas.height + 105 ||
+				this.y < 0 - 105
+			) {
+				this.active = false;
+			}
+		},
+
+		Draw: function() {
+			context.fillStyle = this.color;
+			context.beginPath();
+			context.rect(this.x, this.y, this.size, this.size);
+			context.fill();
+		}
+	};
+
+	function BakeTiles() {
+		if (Tiles.length < numTiles) {
+			for (var i = Tiles.length; i < numTiles; i++) {
+				Tiles.push(new Tile());
+			}
+		}
+		return false;
+	}
+
+	function Update() {
+		BakeTiles();
+
+		Tiles.forEach(function(Tile) {
+			Tile.Update();
 		});
-		//end altTheme
 
-		//active rotation
-		var titles = $('.siteFig');
+		Tiles = Tiles.filter(function(Tile) {
+			return Tile.active;
+		});
 
-		var titleIndex = 0;
+		Render();
+		requestAnimationFrame(Update);
+	}
 
-		setInterval(function(){
-			titles.eq(titleIndex%titles.length).addClass('active');
-			titles.eq((titleIndex-1)%titles.length).removeClass('active');
-			titleIndex++;
-		},2500);
+	function Render() {
+		context.clearRect(0, 0, canvas.width, canvas.height);
+		Tiles.forEach(function(Tile) {
+			Tile.Draw();
+		});
+	}
 
-
-
-
-
-		//Skybox
-		var canvas = $('#skyBox')[0];
-		var context = canvas.getContext('2d');
-
+	$(window).resize(function() {
+		Tiles = [];
 		canvas.width = $(document).width();
 		canvas.height = $(document).height();
-
-		//settings
-		var Tiles = [];
-		var tileColor = '21,21,21';
-		var numTiles = 25;
-
-		function StartUp(){
-			BakeTiles();
-			Update();
-		}
-
-		function Tile() {
-			this.active = true;
-			this.size = 35+Math.random()*70;
-			this.x = Math.round(Math.random() * canvas.width);
-			this.y = Math.round(Math.random() * canvas.height);
-
-			if(Math.random()>0.5){
-				this.velocity = {
-					//direction * speed
-					x: (Math.random() < 0.5 ? -1 : 1) * Math.random(),
-					y: 0
-				};
-			} else {
-				this.velocity = {
-					x: 0,
-					y: (Math.random() < 0.5 ? -1 : 1) * Math.random()
-				};
-			}
-
-			this.transp = 0.01;
-			this.color = 'rgba('+tileColor+','+this.transp+')';
-		}
-
-		Tile.prototype = {
-			Update: function() {
-				if(this.transp < 0.4) {
-	      			this.transp += 0.002;
-					this.color = 'rgba('+tileColor+','+this.transp+')';
-			    }
-
-				this.x += this.velocity.x;
-				this.y += this.velocity.y;
-
-				if(this.x > canvas.width + 105 || this.x < 0 - 105 || this.y > canvas.height + 105 || this.y < 0 - 105) {
-	    			this.active = false;
-	    		}
-			},
-
-			Draw: function() {
-				context.fillStyle = this.color;
-				context.beginPath();
-				context.rect(this.x, this.y, this.size, this.size);
-				context.fill();
-			}
-		};
-
-		function BakeTiles() {
-			if(Tiles.length < numTiles) {
-				for(var i = Tiles.length; i < numTiles; i++) {
-					Tiles.push(new Tile());
-				}
-			}
-			return false;
-		}
-
-		function Update() {
-			BakeTiles();
-
-			Tiles.forEach(function(Tile) {
-				Tile.Update();
-			});
-
-			Tiles = Tiles.filter(function(Tile) {
-				return Tile.active;
-			});
-
-			Render();
-			requestAnimationFrame(Update);
-		}
-
-		function Render() {
-			context.clearRect(0, 0, canvas.width, canvas.height);
-			Tiles.forEach(function(Tile) {
-				Tile.Draw();
-			});
-		}
-
-		$(window).resize(function() {
-			Tiles = [];
-			canvas.width = $(document).width();
-			canvas.height = $(document).height();
-		});
-
-		StartUp();
-		//end Skybox
-
 	});
+
+	StartUp();
+	//end Skybox
+});
 </script>
 <script src="expand.js"></script>
 </html>
