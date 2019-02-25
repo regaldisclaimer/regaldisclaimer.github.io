@@ -119,6 +119,45 @@ Contact: regaldisclaimer@gmail.com for all usage permissions -->
 			<h4>We also provide business solutions for creating technical games, such as Virtual Reality/Google Cardboard games.</h4>
 			<h4>Game development budget varies significantly depending on the project. <a target="_blank" href="mailto:regaldisclaimer@gmail.com"><u>Drop us an email</u></a> and discuss your project with us!</h4>
 		</div>
+		<div class='offSection'>
+			<h3>Book a consulting session</h3>
+			<h4>No time for back-and-forth emails and signing documents just to trial a service?</h4>
+			<h4>You can pre-pay for the session below to schedule a consulting session right away.</h4>
+			<!-- Load Stripe.js on your website. -->
+			<script src="https://js.stripe.com/v3"></script>
+
+			<!-- Create a button that your customers click to complete their purchase. -->
+			<button id="checkout-button" role="link">Pay</button>
+			<div id="error-message"></div>
+
+			<script>
+			  var stripe = Stripe('pk_live_US1i1OUeCj4zflArkTXmQ6Bq', {
+			    betas: ['checkout_beta_4']
+			  });
+
+			  var checkoutButton = document.getElementById('checkout-button');
+			  checkoutButton.addEventListener('click', function () {
+			    // When the customer clicks on the button, redirect
+			    // them to Checkout.
+			    stripe.redirectToCheckout({
+			      items: [{sku: 'sku_EaxCLPBwIjS7Ff', quantity: 1}],
+
+			      // Note that it is not guaranteed your customers will be redirected to this
+			      // URL *100%* of the time, it's possible that they could e.g. close the
+			      // tab between form submission and the redirect.
+			      successUrl: 'https://regaldisclaimer.github.io/success',
+			      cancelUrl: 'https://regaldisclaimer.github.io/Services',
+			    })
+			    .then(function (result) {
+			      if (result.error) {
+				// If `redirectToCheckout` fails due to a browser or network
+				// error, display the localized error message to your customer.
+				var displayError = document.getElementById('error-message');
+				displayError.textContent = result.error.message;
+			      }
+			    });
+			  });
+			</script>
 	</div>
 
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54ad6bc83a3bc1fd" async="async"></script>
